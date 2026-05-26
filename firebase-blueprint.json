@@ -1,0 +1,45 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile data",
+      "type": "object",
+      "properties": {
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "favoriteRecipes": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["email"]
+    },
+    "Recipe": {
+      "title": "Recipe",
+      "description": "A food recipe",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "ingredients": { "type": "array", "items": { "type": "string" } },
+        "steps": { "type": "array", "items": { "type": "string" } },
+        "prepTime": { "type": "number" },
+        "cookTime": { "type": "number" },
+        "difficulty": { "type": "string" },
+        "authorId": { "type": "string" },
+        "imageUrls": { "type": "array", "items": { "type": "string" } },
+        "videoUrl": { "type": "string" },
+        "createdAt": { "type": "object", "description": "Firestore Timestamp" },
+        "updatedAt": { "type": "object", "description": "Firestore Timestamp" }
+      },
+      "required": ["title", "authorId", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "User profiles"
+    },
+    "recipes/{recipeId}": {
+      "schema": { "$ref": "#/entities/Recipe" },
+      "description": "Recipes"
+    }
+  }
+}

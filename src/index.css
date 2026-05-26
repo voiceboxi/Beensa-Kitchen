@@ -1,0 +1,20 @@
+@import '@fontsource/montserrat/400.css';
+@import '@fontsource/montserrat/500.css';
+@import '@fontsource/montserrat/600.css';
+@import '@fontsource/montserrat/700.css';
+@import '@fontsource/montserrat/800.css';
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #2A5C8A;
+  --color-brand-orange: #FF8C42;
+  --color-brand-pink: #FFB6C1;
+  --color-brand-bg: #FDFDFD;
+  --font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--color-brand-bg);
+  @apply text-[#333333] antialiased overflow-x-hidden;
+}
+
