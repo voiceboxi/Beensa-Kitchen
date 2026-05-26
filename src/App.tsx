@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { Navbar } from './components/Navbar';
 import { Home } from './pages/Home';
@@ -16,7 +16,7 @@ import { Contact } from './pages/Contact';
 export default function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <Router>
         <div className="min-h-screen flex flex-col">
           <Navbar />
           <main className="flex-1">
@@ -29,7 +29,7 @@ export default function App() {
             </Routes>
           </main>
         </div>
-      </BrowserRouter>
+      </Router>
     </AuthProvider>
   );
 }
